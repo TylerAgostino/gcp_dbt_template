@@ -1,0 +1,5 @@
+A template repository to create a barebones DBT pipeline on Google Cloud Services.
+Creates a Cloud Build job to publish a Docker image with the dbt code, dependencies, and bigquery service account key.
+Requires:
+- Bigquery account configured with keyfile stored as 'dbt_bq_service_account_key'
+- Artifact Hub repository created as 'dbt'

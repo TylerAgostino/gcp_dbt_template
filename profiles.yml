@@ -1,0 +1,17 @@
+dbt_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project:
+      dataset:
+      keyfile: /keyfile
+      threads: 4
+    main:
+      type: bigquery
+      method: service-account
+      project:
+      dataset:
+      keyfile: /keyfile
+      threads: 4
