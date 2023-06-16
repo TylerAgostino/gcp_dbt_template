@@ -3,8 +3,8 @@ steps:
     entrypoint: 'bash'
     args: [ '-c', "gcloud secrets versions access latest --secret=dbt_bq_service_account_key --out-file=/workspace/keyfile" ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-east1-docker.pkg.dev/GCP_PROJECT_ID/dbt/dbt:$BRANCH_NAME', '--build-arg','branch=$BRANCH_NAME', '.']
+    args: ['build', '-t', 'us-east1-docker.pkg.dev/$PROJECT_ID/dbt/dbt:$BRANCH_NAME', '--build-arg','branch=$BRANCH_NAME', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east1-docker.pkg.dev/GCP_PROJECT_ID/dbt/dbt:$BRANCH_NAME']
+    args: ['push', 'us-east1-docker.pkg.dev/$PROJECT_ID/dbt/dbt:$BRANCH_NAME']
 options:
   logging: CLOUD_LOGGING_ONLY
